@@ -1,5 +1,5 @@
 FROM node:20
-ENV DB_HOST=""
+ENV DB_HOST="naresh_naidu1"
 EXPOSE 8080
 RUN mkdir /app
 WORKDIR /app

@@ -6,4 +6,4 @@ WORKDIR /app
 COPY *.json /app
 COPY *.js /app
 RUN npm install
-CMD [ "node", "indeex.js" ]
+CMD [ "node", "index.js" ]

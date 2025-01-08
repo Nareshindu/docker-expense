@@ -1,0 +1,32 @@
+version: '3'
+networks:
+ expense:
+volumes:
+ mysql:
+services:
+  mysql:
+    image: naresh34/mysql:v1
+    volumes:
+      - mysql
+    networks:
+      - expense
+    container_name: naresh1
+
+  backend:
+    image: naresh34/backend:v1
+    networks:
+      - expense
+    container_name: naresh2
+    depends_on:
+      - naresh1
+
+  frontend:
+      image: naresh34/frontend:v1
+      networks:
+        - expense
+      container_name:
+        - naresh3
+      ports: 
+      - 80:80   
+      depende_on:
+      - naresh2 
